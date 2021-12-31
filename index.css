@@ -15,6 +15,7 @@ ul {
 .title {
   text-transform: uppercase;
   text-shadow: 1px 1px white;
+  font-size: 3rem;
 }
 
 li {
@@ -36,6 +37,13 @@ body {
   flex-direction: column;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .control {
   border-radius: 5px;
   padding: 0.25rem 3rem;
@@ -50,14 +58,13 @@ body {
 
 .card {
   color: #ccc;
-  margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
+  padding: 3rem;
+  margin-top: 3rem;
   height: auto;
-  width: 600px;
-background: linear-gradient(46deg, rgb(137, 99, 240) 31%, rgb(64, 8, 139) 89%);
+ max-width: 800px;
+  background: linear-gradient(46deg, rgb(137, 99, 240) 31%, rgb(64, 8, 139) 89%);
   border-radius: 15px;
   box-shadow: 10px 10px 40px black, inset 5px 5px 50px blue;
   text-shadow: 1px 1px black;
@@ -74,14 +81,44 @@ img {
 .list {
   display: flex;
   justify-content: space-between;
-  width: 300px;
   margin-top: 2rem;
+  width: 70%;
 }
 
+li {
+    font-weight: 900;
+    border-bottom: 2px solid #ccc;
+}
 .bio {
   margin-top: 1rem;
 }
 
 .user-info {
   margin-left: 1.5rem;
+}
+
+.repo-list {
+margin-top: 0.7rem;
+}
+
+.avatar-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.repo {
+    display:inline-block;
+    color: white;
+    border: 1px solid black;
+    margin: 0.5rem;
+    backdrop-filter: brightness(40%);
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.repo:hover {
+    background-color: rgb(1, 1, 148);
 }
