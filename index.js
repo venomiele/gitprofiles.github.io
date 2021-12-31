@@ -3,7 +3,7 @@ let section = document.querySelector(".main");
 let form = document.querySelector(".form");
 let search = document.querySelector(".control")
 getData("venomiele");
-let repoList = document.querySelector(".repo-list");
+
 
 // Get the data for the users
 
@@ -12,23 +12,30 @@ async function getData(username) {
   const data = await resp.json();
   
   createUser(data);
+  getRepo(username);
 }
 
 //get repository data
 
-async function getRepo(url) {
+async function getRepo(username) {
   const respData = await fetch(APIURL + username + "/repos");
   const dataResp = await respData.json();
   
-  getRepoLink(username);
+  getRepoLink(dataResp);
 }
-// function getRepoLink(repos) {
-//   repos.forEach(repo => {
-//     let liEl = repoList.createElement("li");
-//     liEL.classList.add("repo");
-//     liEl.innerText = repo.
-//   })
-// }
+
+function getRepoLink(repos) {
+    let repoList = document.querySelector(".repo-list");
+  repos.forEach(repo => {
+    let liEl = document.createElement("a");
+    liEl.classList.add("repo");
+    liEl.href = repo.html_url;
+    liEl.target = "_blank";
+    liEl.innerText = repo.name;
+
+    repoList.appendChild(liEl);
+  })
+}
 
 // dynamically create user card
 
@@ -46,8 +53,8 @@ function createUser(user) {
     <li>${user.following} <span>Following</span> </li>
       <li>${user.public_repos} <span>Repos</span> </li>
   </ul>
-  <ul class="repo-list">
-  </ul>
+  <div class="repo-list">
+  </div>
   </div>
   </div>`
   section.innerHTML = cardHTML;
