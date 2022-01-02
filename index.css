@@ -126,6 +126,23 @@ height: 200px;
     background-color: rgb(1, 1, 148);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 7px;
+}
+
+
 /* Media queries */
 
 @media screen and (max-width: 927px) {
@@ -241,7 +258,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 70%;
-  text-align: center;
+  text-align: start;
 }
 
 li {
@@ -262,9 +279,6 @@ li {
 
 .list {
   font-size: 0.6rem;
-}
-
-.repo-list {
 }
 
 img {
