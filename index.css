@@ -46,7 +46,7 @@ body {
 
 .control {
   border-radius: 5px;
-  padding: 0.25rem 3rem;
+  padding: 0.75rem 3rem;
   width: 100%;
   color: black;
   font-weight: 500;
@@ -88,17 +88,20 @@ img {
 li {
     font-weight: 900;
     border-bottom: 2px solid #ccc;
+    user-select: none;
 }
 .bio {
   margin-top: 1rem;
 }
 
 .user-info {
-  margin-left: 1.5rem;
+  margin-left: 1.75rem;
 }
 
 .repo-list {
 margin-top: 0.7rem;
+overflow-y: scroll;
+height: 200px;
 }
 
 .avatar-container {
@@ -111,7 +114,7 @@ margin-top: 0.7rem;
     color: white;
     border: 1px solid black;
     margin: 0.5rem;
-    backdrop-filter: brightness(40%);
+    backdrop-filter: brightness(30%);
     padding: 0.25rem;
     cursor: pointer;
     transition: all 0.3s linear;
@@ -121,4 +124,162 @@ margin-top: 0.7rem;
 
 .repo:hover {
     background-color: rgb(1, 1, 148);
+}
+
+/* Media queries */
+
+@media screen and (max-width: 927px) {
+  .card {
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  margin-top: 3rem;
+  height: auto;
+  max-width: 600px;
+  background: linear-gradient(46deg, rgb(137, 99, 240) 31%, rgb(64, 8, 139) 89%);
+  border-radius: 15px;
+  box-shadow: 10px 10px 40px black, inset 5px 5px 50px blue;
+  text-shadow: 1px 1px black;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+}
+}
+
+@media screen and (max-width: 678px) {
+  .card {
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  margin-top: 3rem;
+  height: auto;
+  max-width: 500px;
+  background: linear-gradient(46deg, rgb(137, 99, 240) 31%, rgb(64, 8, 139) 89%);
+  border-radius: 15px;
+  box-shadow: 10px 10px 40px black, inset 5px 5px 50px blue;
+  text-shadow: 1px 1px black;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 0.75rem;
+}
+
+.repo {
+  font-size: 0.75rem;
+}
+
+img {
+  height:  auto;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid  white;
+  box-shadow: 8px 8px 30px black;
+}
+
+.title {
+  font-size:2rem;
+}
+.control {
+  padding: 0.5rem 2rem;
+}
+}
+
+@media screen and (max-width: 578px) {
+  .card {
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  margin-top: 3rem;
+  height: auto;
+  max-width: 350px;
+  background: linear-gradient(46deg, rgb(137, 99, 240) 31%, rgb(64, 8, 139) 89%);
+  border-radius: 15px;
+  box-shadow: 10px 10px 40px black, inset 5px 5px 50px blue;
+  text-shadow: 1px 1px black;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.repo {
+  font-size: 0.6rem;
+}
+
+img {
+  height:  auto;
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid  white;
+  box-shadow: 8px 8px 30px black;
+}
+
+.title {
+  font-size:1.5rem;
+}
+.control {
+  padding: 0.5rem 2rem;
+}
+
+.list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  text-align: center;
+}
+
+li {
+  font-weight: 900;
+  user-select: none;
+  border: none;
+}
+
+.username {
+  font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 405px) {
+.card {
+  max-width: 300px;
+}
+
+.list {
+  font-size: 0.6rem;
+}
+
+.repo-list {
+}
+
+img {
+  height:  auto;
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid  white;
+  box-shadow: 8px 8px 30px black;
+}
+
+.bio {
+  font-size: 0.75rem;
+}
+
+.username {
+  font-size: 0.75rem;
+}
 }
